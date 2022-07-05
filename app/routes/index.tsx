@@ -1,8 +1,8 @@
 import { Header } from '~/components/header'
 import { Hero } from '~/components/hero'
-import { FeaturesSection } from '~/components/sections/featuresSection'
-import { ExtensionsSection } from '~/components/sections/extensionsSection'
-import { FaqSection } from '~/components/sections/faqSection'
+import { FeaturesSection } from '~/components/sections/features-section'
+import { ExtensionsSection } from '~/components/sections/extensions-section'
+import { FaqSection } from '~/components/sections/faq-section'
 
 export default function Index() {
   return (
