@@ -9,16 +9,16 @@ type Props = {
 
 export function FaqListItem({ open, question, answer, onClick }: Props) {
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b border-gray-200 xl:first:border-t">
       <button
         onClick={onClick}
-        className="w-full bg-white border-none text-start py-3 text-sm text-neutral-800 cursor-pointer flex items-center justify-between"
+        className="w-full bg-white border-none text-start py-[1.35rem] text-sm tracking-wide text-neutral-800 cursor-pointer flex items-center justify-between lg:text-lg lg:tracking-normal xl:pt-[1.35rem] xl:pb-[1.1rem] xl:pr-6"
       >
         <span className="flex-1">{question}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 18 12"
-          className={clsx('transition-transform w-3', {
+          className={clsx('transition-transform w-4', {
             'rotate-180': open,
           })}
         >
@@ -34,9 +34,9 @@ export function FaqListItem({ open, question, answer, onClick }: Props) {
       </button>
       <div
         className={clsx(
-          'overflow-hidden bg-white transition-[max-height] max-h-0 ease-out duration-300',
+          'overflow-hidden bg-white transition-[max-height] max-h-0 ease-linear duration-300',
           {
-            'max-h-[10rem]': open,
+            'max-h-[15rem]': open,
           }
         )}
       >

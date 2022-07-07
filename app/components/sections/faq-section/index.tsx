@@ -1,22 +1,24 @@
+import { ContentContainer } from '~/components/content-container'
+import { SectionDescription, SectionTitle } from '~/components/typography'
 import { FaqList } from './faq-list'
 
 export function FaqSection() {
   return (
-    <section className="px-6 mt-32 flex flex-col">
-      <h2 className="text-lg text-neutral-800 font-medium text-center">
-        Frequently Asked Questions
-      </h2>
-      <p className="mt-3 text-sm text-neutral-400 text-center">
-        Here are some of our FAQs. If you have any other questions you’d like
-        answered please feel free to email us.
-      </p>
-      <FaqList />
-      <a
-        href="#"
-        className="text-sm text-white bg-primary-400 py-2 px-4 rounded mt-10 self-center font-medium"
-      >
-        More Info
-      </a>
+    <section>
+      <ContentContainer className="px-8 mt-[8.75rem] flex flex-col sm:px-24 md:px-36 xl:px-0 xl:mt-[10rem] xl:!w-[540px]">
+        <SectionTitle>Frequently Asked Questions</SectionTitle>
+        <SectionDescription className="mt-4 xl:mt-[1.6rem]">
+          Here are some of our FAQs. If you have any other questions you’d like
+          answered please feel free to email us.
+        </SectionDescription>
+        <FaqList />
+        <a
+          href="#"
+          className="inline-block text-sm text-white bg-primary-400 py-[0.9rem] px-6 rounded mt-12 self-center font-medium xl:mt-[2.875rem]"
+        >
+          More Info
+        </a>
+      </ContentContainer>
     </section>
   )
 }

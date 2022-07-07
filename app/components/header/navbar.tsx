@@ -1,31 +1,54 @@
+import clsx from 'clsx'
 import { useState } from 'react'
+import { ClientOnly } from 'remix-utils'
+import { MobileMenu } from './mobile-menu'
 
-import { NavbarItem } from './navbar-item'
+type Props = {
+  children: React.ReactNode
+  shrinkHeader?: boolean
+}
 
-export function Navbar() {
+export function Navbar({ children, shrinkHeader }: Props) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <>
-      <button>
+    <div className="flex items-center">
+      <nav className="hidden md:block">{children}</nav>
+
+      <button
+        onClick={() => setIsOpen((isOpen) => !isOpen)}
+        className={clsx('md:hidden', { 'opacity-0': isOpen })}
+      >
         <img src="/images/icon-hamburger.svg" alt="Open menu" />
       </button>
-      <nav className="absolute inset-0 hidden" aria-label="Header navigation">
-        <ul>
-          <li>
-            <NavbarItem href="#">Features</NavbarItem>
-          </li>
-          <li>
-            <NavbarItem href="#">Pricing</NavbarItem>
-          </li>
-          <li>
-            <NavbarItem href="#">Contact</NavbarItem>
-          </li>
-          <li>
-            <NavbarItem href="#">Login</NavbarItem>
-          </li>
-        </ul>
-      </nav>
-    </>
+
+      <ClientOnly>
+        {() => (
+          <MobileMenu open={isOpen} onClose={() => setIsOpen(false)}>
+            <div
+              className={clsx('flex items-center justify-between', {
+                'h-24': !shrinkHeader,
+                'h-16': shrinkHeader,
+              })}
+            >
+              <img src="/images/logo-bookmark-white.svg" alt="Home" />
+
+              <button onClick={() => setIsOpen((isOpen) => !isOpen)}>
+                <img src="/images/icon-close.svg" alt="Close menu" />
+              </button>
+            </div>
+            <nav
+              className={clsx('flex flex-col flex-1 justify-between', {
+                hidden: !isOpen,
+                block: isOpen,
+              })}
+              aria-label="Header navigation"
+            >
+              {children}
+            </nav>
+          </MobileMenu>
+        )}
+      </ClientOnly>
+    </div>
   )
 }

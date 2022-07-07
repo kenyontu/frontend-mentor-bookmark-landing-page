@@ -32,7 +32,7 @@ export function FaqList() {
   const [openQuestion, setOpenQuestion] = useState<string | null>(null)
 
   return (
-    <div className="mt-10">
+    <div className="mt-11 xl:mt-14">
       {faqs.map((faq) => (
         <FaqListItem
           key={faq.id}

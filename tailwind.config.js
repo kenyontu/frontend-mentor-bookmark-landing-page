@@ -15,7 +15,23 @@ module.exports = {
       backgroundImage: {
         'dot-pattern': 'url(/images/bg-dots.svg)',
       },
+      height: {
+        header: '6.5rem',
+        'header-xl': '8.5rem',
+      },
+      width: {
+        'max-lg': '980px',
+        'max-xl': '1240px',
+        'max-2xl': '1330px',
+      },
+      screens: {
+        '2xl': '1440px',
+      },
+      padding: {
+        header: '6.5rem',
+        'header-xl': '8.5rem',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@savvywombat/tailwindcss-grid-areas')],
 }

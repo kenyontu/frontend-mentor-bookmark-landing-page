@@ -1,3 +1,6 @@
+import { ContentContainer } from '~/components/content-container'
+import { SectionDescription, SectionTitle } from '~/components/typography'
+
 export type FeatureId = 'simpleBooking' | 'speedySearching' | 'easySharing'
 
 export const features: {
@@ -42,18 +45,25 @@ export function Feature({ featureId }: Props) {
     features.find((feature) => feature.id === featureId) ?? features[0]
 
   return (
-    <div className="mt-2">
-      <div className="relative h-[20rem] px-6 flex items-center justify-center">
-        <img src={feature.pictureImgSrc} alt="" className="h-[14rem] w-auto " />
-        <span className="absolute h-[14rem] bg-primary-400 left-0 bottom-0 top-[27%] right-14 -z-10 rounded-r-full" />
+    <div className="mt-[3.75rem] grid lg:grid-cols-2 lg:mt-[4.5rem]">
+      <div className="h-[14rem] sm:h-[20rem] px-6 flex items-center justify-center xl:h-auto 2xl:pl-[7.1rem] 2xl:pr-[0.95rem]">
+        <img
+          src={feature.pictureImgSrc}
+          alt=""
+          className="h-[12.45rem] sm:h-[16.5rem] w-auto xl:h-[20rem] 2xl:h-[21.633rem]"
+        />
       </div>
-      <div className="px-6 mt-8">
-        <h2 className="text-center text-lg text-neutral-800 font-medium">
-          {feature.title}
-        </h2>
-        <p className="mt-3 text-center text-sm text-neutral-400">
+      <div className="px-6 mt-[4.1rem] sm:px-24 md:px-36 lg:px-8 xl:pl-[3rem] xl:pr-[7rem] 2xl:pl-[6.85rem]">
+        <SectionTitle className="lg:text-left">{feature.title}</SectionTitle>
+        <SectionDescription className="mt-[0.85rem] px-2 lg:px-0 lg:text-left lg:mt-[1.75rem]">
           {feature.message}
-        </p>
+        </SectionDescription>
+        <a
+          href="#"
+          className="hidden text-sm text-white bg-primary-400 rounded lg:inline-block font-medium px-[1.6rem] py-[0.85rem] mt-8 shadow-lg"
+        >
+          More Info
+        </a>
       </div>
     </div>
   )
