@@ -12,7 +12,7 @@ export function FeatureTabs({ selected, onChange }: Props) {
   return (
     <div
       role="radiogroup"
-      className="grid grid-cols-1 sm:grid-cols-3 sm:justify-evenly px-6 mt-10 md:mt-[2.5rem] lg:w-[777px] lg:mx-auto"
+      className="grid grid-cols-1 sm:grid-cols-3 sm:justify-evenly px-8 md:px-6 mt-10 md:mt-[2.5rem] lg:w-[777px] lg:mx-auto"
     >
       {features.map((feature) => {
         const inputId = `tab-${feature.id}`
@@ -33,7 +33,7 @@ export function FeatureTabs({ selected, onChange }: Props) {
             />
             <label
               htmlFor={inputId}
-              className="text-neutral-800 text-center py-[1.05rem] relative cursor-pointer tracking-wide sm:px-2 sm:w-full xl:py-[1.75rem]"
+              className="text-neutral-800 text-center py-[1rem] relative cursor-pointer tracking-wide sm:px-2 sm:w-full xl:py-[1.75rem]"
             >
               {feature.tabName}
               <span

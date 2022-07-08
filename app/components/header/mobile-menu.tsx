@@ -20,7 +20,7 @@ export function MobileMenu({ open, onClose, children }: Props) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Dialog.Panel className="fixed inset-0 pb-10 px-6 bg-neutral-800/90 z-20 flex flex-col">
+          <Dialog.Panel className="fixed inset-0 pb-10 px-8 bg-neutral-800/90 z-20 flex flex-col">
             {children}
           </Dialog.Panel>
         </Transition.Child>

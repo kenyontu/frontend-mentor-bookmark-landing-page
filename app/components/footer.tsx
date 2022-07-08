@@ -16,7 +16,7 @@ export function Footer() {
           <a href="#">Pricing</a>
           <a href="#">Contact</a>
 
-          <span className="md:flex-1" />
+          <span className="hidden md:inline md:flex-1" />
 
           <div className="flex items-center mt-4 gap-10 md:mt-0">
             <a href="#">

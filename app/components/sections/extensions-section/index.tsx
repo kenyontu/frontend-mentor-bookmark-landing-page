@@ -4,7 +4,7 @@ import { ExtensionCard } from './extension-card'
 
 export function ExtensionsSection() {
   return (
-    <section className="mt-[9.4rem] lg:mt-[10rem]">
+    <section className="mt-[9.3rem] lg:mt-[10rem]">
       <ContentContainer className="px-12 sm:px-32 md:px-40">
         <div className="lg:px-12 xl:px-56">
           <SectionTitle>Download the extension</SectionTitle>
@@ -14,7 +14,7 @@ export function ExtensionsSection() {
           </SectionDescription>
         </div>
 
-        <div className="grid grid-cols-1 gap-16 mt-16 md:px-16 xl:grid-cols-3 xl:mt-[3rem] 2xl:px-[3.1rem] xl:gap-8 xl:items-start">
+        <div className="grid grid-cols-1 gap-10 mt-10 md:px-16 xl:grid-cols-3 xl:mt-[3rem] 2xl:px-[3.1rem] xl:gap-8 xl:items-start">
           <ExtensionCard
             iconImgSrc="/images/logo-chrome.svg"
             name="Chrome"

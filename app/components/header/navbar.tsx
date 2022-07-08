@@ -27,11 +27,15 @@ export function Navbar({ children, shrinkHeader }: Props) {
           <MobileMenu open={isOpen} onClose={() => setIsOpen(false)}>
             <div
               className={clsx('flex items-center justify-between', {
-                'h-24': !shrinkHeader,
+                'h-header': !shrinkHeader,
                 'h-16': shrinkHeader,
               })}
             >
-              <img src="/images/logo-bookmark-white.svg" alt="Home" />
+              <img
+                src="/images/logo-bookmark-all-white.svg"
+                alt="Home"
+                className="filter grayscale"
+              />
 
               <button onClick={() => setIsOpen((isOpen) => !isOpen)}>
                 <img src="/images/icon-close.svg" alt="Close menu" />
