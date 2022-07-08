@@ -16,15 +16,15 @@ export function NavbarItem({
   return (
     <li
       className={clsx('text-white md:text-[0.76rem]', {
-        'border-b border-gray-500 first:border-t md:border-0 md:first:border-0 md:text-neutral-800':
+        'border-b border-gray-500 first:border-t md:border-0 md:text-neutral-800 md:first:border-0':
           !isButton,
-        'border-2 border-white rounded mt-5 font-medium md:border-0 md:mt-0 md:bg-secondary-400 md:shadow-lg':
+        'mt-5 rounded border-2 border-white font-medium md:mt-0 md:border-0 md:bg-secondary-400 md:shadow-lg':
           isButton,
       })}
     >
       <a
         className={clsx(
-          'block tracking-[0.2em] uppercase text-center md:tracking-[0.125rem]',
+          'block text-center uppercase tracking-[0.2em] md:tracking-[0.125rem]',
           {
             'py-4': !isButton,
             'py-3 md:px-4 md:py-2 xl:py-[0.75rem] xl:px-[2.1rem]': isButton,

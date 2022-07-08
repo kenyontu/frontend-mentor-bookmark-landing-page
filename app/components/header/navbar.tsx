@@ -34,7 +34,7 @@ export function Navbar({ children, shrinkHeader }: Props) {
               <img
                 src="/images/logo-bookmark-all-white.svg"
                 alt="Home"
-                className="filter grayscale"
+                className="grayscale filter"
               />
 
               <button onClick={() => setIsOpen((isOpen) => !isOpen)}>
@@ -42,7 +42,7 @@ export function Navbar({ children, shrinkHeader }: Props) {
               </button>
             </div>
             <nav
-              className={clsx('flex flex-col flex-1 justify-between', {
+              className={clsx('flex flex-1 flex-col justify-between', {
                 hidden: !isOpen,
                 block: isOpen,
               })}

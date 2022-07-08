@@ -14,7 +14,7 @@ export function ExtensionsSection() {
           </SectionDescription>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 mt-10 md:px-16 xl:grid-cols-3 xl:mt-[3rem] 2xl:px-[3.1rem] xl:gap-8 xl:items-start">
+        <div className="mt-10 grid grid-cols-1 gap-10 md:px-16 xl:mt-[3rem] xl:grid-cols-3 xl:items-start xl:gap-8 2xl:px-[3.1rem]">
           <ExtensionCard
             iconImgSrc="/images/logo-chrome.svg"
             name="Chrome"

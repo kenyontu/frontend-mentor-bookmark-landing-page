@@ -20,13 +20,13 @@ export function Header() {
 
   return (
     <header
-      className={clsx('fixed top-0 right-0 left-0 bg-white z-10', {
+      className={clsx('fixed top-0 right-0 left-0 z-10 bg-white', {
         'shadow-lg': !isScrollOnPageTop,
       })}
     >
       <ContentContainer
         className={clsx(
-          'flex items-center px-8 justify-between transition-[height] xl:mx-aut xl:pl-[5.6rem] xl:pr-[5.25rem] 2xl:pl-[7.25rem] 2xl:pr-[6.8rem]',
+          'xl:mx-aut flex items-center justify-between px-8 transition-[height] xl:pl-[5.6rem] xl:pr-[5.25rem] 2xl:pl-[7.25rem] 2xl:pr-[6.8rem]',
           {
             'h-header xl:h-header-xl': isScrollOnPageTop,
             'h-16': !isScrollOnPageTop,
@@ -38,7 +38,7 @@ export function Header() {
         </a>
 
         <Navbar shrinkHeader={!isScrollOnPageTop}>
-          <ul className="flex flex-col flex-1 md:flex-row md:items-center md:gap-8 xl:gap-[2.85rem]">
+          <ul className="flex flex-1 flex-col md:flex-row md:items-center md:gap-8 xl:gap-[2.85rem]">
             <NavbarItem href="#">Features</NavbarItem>
             <NavbarItem href="#">Pricing</NavbarItem>
             <NavbarItem href="#">Contact</NavbarItem>
@@ -47,7 +47,7 @@ export function Header() {
             </NavbarItem>
           </ul>
 
-          <div className="flex items-center mt-3 gap-8 md:hidden self-center">
+          <div className="mt-3 flex items-center gap-8 self-center md:hidden">
             <a href="#">
               <FacebookIcon className="w-5 fill-white" />
             </a>

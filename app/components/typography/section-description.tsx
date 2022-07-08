@@ -7,7 +7,7 @@ export function SectionDescription({ children, className, ...props }: Props) {
   return (
     <p
       className={clsx(
-        'col-span-2 text-center  leading-[1.75em] tracking-wide text-sm text-neutral-400 lg:text-lg lg:tracking-normal',
+        'col-span-2 text-center text-sm leading-[1.75em] tracking-wide text-neutral-400 lg:text-lg lg:tracking-normal',
         className
       )}
       {...props}

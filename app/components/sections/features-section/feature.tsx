@@ -45,22 +45,22 @@ export function Feature({ featureId }: Props) {
     features.find((feature) => feature.id === featureId) ?? features[0]
 
   return (
-    <div className="mt-[4.65rem] grid lg:grid-cols-2 lg:mt-[4.5rem]">
-      <div className="px-6 flex justify-center lg:items-center lg:justify-end 2xl:pl-0 2xl:pr-[0.95rem]">
+    <div className="mt-[4.65rem] grid lg:mt-[4.5rem] lg:grid-cols-2">
+      <div className="flex justify-center px-6 lg:items-center lg:justify-end 2xl:pl-0 2xl:pr-[0.95rem]">
         <img
           src={feature.pictureImgSrc}
           alt=""
           className="h-[15.1rem] w-auto sm:h-[17.5rem] xl:h-[20rem] 2xl:h-[26rem]"
         />
       </div>
-      <div className="px-6 mt-[2.45rem] sm:mt-[4.1rem] sm: sm:px-24 md:px-36 lg:mt-0 lg:px-8 xl:pl-[3rem] xl:pr-[7rem] xl:mt-[2rem] 2xl:mt-[4.1rem] 2xl:pl-[6.85rem]">
+      <div className="sm: mt-[2.45rem] px-6 sm:mt-[4.1rem] sm:px-24 md:px-36 lg:mt-0 lg:px-8 xl:mt-[2rem] xl:pl-[3rem] xl:pr-[7rem] 2xl:mt-[4.1rem] 2xl:pl-[6.85rem]">
         <SectionTitle className="lg:text-left">{feature.title}</SectionTitle>
-        <SectionDescription className="mt-[0.85rem] px-2 lg:px-0 lg:text-left lg:mt-[1.75rem]">
+        <SectionDescription className="mt-[0.85rem] px-2 lg:mt-[1.75rem] lg:px-0 lg:text-left">
           {feature.message}
         </SectionDescription>
         <a
           href="#"
-          className="hidden text-sm text-white bg-primary-400 rounded lg:inline-block font-medium px-[1.6rem] py-[0.85rem] mt-8 shadow-lg"
+          className="mt-8 hidden rounded bg-primary-400 px-[1.6rem] py-[0.85rem] text-sm font-medium text-white shadow-lg lg:inline-block"
         >
           More Info
         </a>
