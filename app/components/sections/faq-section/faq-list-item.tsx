@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { useEffect, useRef, useState } from 'react'
 
 type Props = {
   open: boolean
@@ -8,8 +9,23 @@ type Props = {
 }
 
 export function FaqListItem({ open, question, answer, onClick }: Props) {
+  const [maxHeight, setMaxHeight] = useState(-1)
+  const answerContainer = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (maxHeight < 0) setMaxHeight(answerContainer.current?.scrollHeight ?? 0)
+  }, [maxHeight])
+
+  useEffect(() => {
+    const onResize = () => setMaxHeight(-1)
+
+    window.addEventListener('resize', onResize)
+
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   return (
-    <div className="border-b border-gray-200 xl:first:border-t">
+    <div className="relative border-b border-gray-200 xl:first:border-t">
       <button
         onClick={onClick}
         className="flex w-full cursor-pointer items-center justify-between border-none bg-white py-[1.35rem] text-start text-sm tracking-wide text-neutral-800 lg:text-lg lg:tracking-normal xl:pt-[1.35rem] xl:pb-[1.1rem] xl:pr-6"
@@ -33,14 +49,18 @@ export function FaqListItem({ open, question, answer, onClick }: Props) {
         </svg>
       </button>
       <div
+        ref={answerContainer}
+        style={{ maxHeight: maxHeight < 0 ? undefined : open ? maxHeight : 0 }}
         className={clsx(
-          'max-h-0 overflow-hidden bg-white transition-[max-height] duration-300 ease-linear',
+          'overflow-hidden bg-white transition-[max-height] duration-300 ease-in-out',
           {
-            'max-h-[15rem]': open,
+            'invisible absolute': maxHeight < 0,
           }
         )}
       >
-        <p className="py-3 text-sm leading-loose text-neutral-500">{answer}</p>
+        <p className="py-3 text-sm leading-loose text-neutral-500 lg:text-lg">
+          {answer}
+        </p>
       </div>
     </div>
   )
