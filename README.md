@@ -1,52 +1,109 @@
-# Welcome to Remix!
+# Frontend Mentor - Bookmark landing page solution
 
-- [Remix Docs](https://remix.run/docs)
+This is a solution to the [Bookmark landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/bookmark-landing-page-5d0b588a9edda32581d29158). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Netlify Setup
+## Table of contents
 
-1. Install the [Netlify CLI](https://www.netlify.com/products/dev/):
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshots](#screenshots)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
 
-```sh
-npm i -g netlify-cli
-```
+## Overview
 
-If you have previously installed the Netlify CLI, you should update it to the latest version:
+### The challenge
 
-```sh
-npm i -g netlify-cli@latest
-```
+Users should be able to:
 
-2. Sign up and log in to Netlify:
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Receive an error message when the newsletter form is submitted if:
+  - The input field is empty
+  - The email address is not formatted correctly
 
-```sh
-netlify login
-```
+### Screenshots
 
-3. Create a new site:
+Click to open the full-size screenshot.
 
-```sh
-netlify init
-```
+| Mobile layout                                                                       | Desktop layout                                                                        |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| <a href="./screenshots/mobile.png"><img src="./screenshots/mobile-thumb.png" /></a> | <a href="./screenshots/desktop.png"><img src="./screenshots/desktop-thumb.png" /></a> |
 
-## Development
+### Links
 
-The Netlify CLI starts your app in development mode, rebuilding assets on file changes.
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-```sh
-npm run dev
-```
+## My process
 
-Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
+### Built with
 
-## Deployment
+- Semantic HTML5 markup
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Remix](https://remix.run/) - React framework
+- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 
-There are two ways to deploy your app to Netlify, you can either link your app to your git repo and have it auto deploy changes to Netlify, or you can deploy your app manually. If you've followed the setup instructions already, all you need to do is run this:
+### What I learned
 
-```sh
-npm run build
-# preview deployment
-netlify deploy
+#### Dynamically sized accordion items
 
-# production deployment
-netlify deploy --prod
+At first I've implemented the accordion's opening and closing animations by toggling between `0` and fixed value `max-height` like `10rem`. But this approach has the following issues:
+
+- Animations are not consistent between items of different sizes. Since the transitions are between 0 and a fixed value, not the actual height of the content.
+- Setting a low `max-height` has the chance of cutting out part of the content. And setting it too high makes the animations too quick.
+
+Doing some research on other methods, found this [Codepen by Aaron Bushnell](https://codepen.io/aaronbushnell/pen/eGVdzv), where he showcases a way to get the appropriate `max-height` value for each item with vanilla JS.
+
+Based on his approach I came up with this solution on React:
+
+```tsx
+function AccordionItem({ open, title, text, onClick }: Props) {
+  // Will hold the max-height for this item, the negative value means that it
+  // is not initialized and we need to measure it
+  const [maxHeight, setMaxHeight] = useState(-1)
+  const container = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // We use the scrollHeight value of container as the max-height, but this
+    // requires it to actually be rendered. Which is why we set it to be
+    // absolute positioned and invisible at first, to allow measuring
+    if (maxHeight < 0) setMaxHeight(answerContainer.current?.scrollHeight ?? 0)
+  }, [maxHeight])
+
+  useEffect(() => {
+    // In the event where the user decides to resize the screen, the content's
+    // dimensions might change, so we need to measure a new max-height, we do
+    // this by setting maxHeight to a negative value, thus triggering the
+    // effect above
+    const onResize = () => setMaxHeight(-1)
+
+    window.addEventListener('resize', onResize)
+
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  return (
+    <div>
+      <button onClick={onClick}>{title}</button>
+      <div
+        ref={container}
+        style={{ maxHeight: maxHeight < 0 ? undefined : open ? maxHeight : 0 }}
+        className={clsx(
+          'overflow-hidden transition-[max-height] duration-300 ease-in-out',
+          {
+            'invisible absolute': maxHeight < 0,
+          }
+        )}
+      >
+        <p>{text}</p>
+      </div>
+    </div>
+  )
+}
 ```
