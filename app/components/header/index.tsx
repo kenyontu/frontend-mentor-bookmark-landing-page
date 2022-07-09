@@ -10,6 +10,8 @@ export function Header() {
   const [isScrollOnPageTop, setIsScrollOnPageTop] = useState(true)
 
   useEffect(() => {
+    setIsScrollOnPageTop(window.scrollY === 0)
+
     const onScroll = () => {
       setIsScrollOnPageTop(window.scrollY === 0)
     }
