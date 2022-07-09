@@ -1,4 +1,5 @@
 import { ContentContainer } from '~/components/content-container'
+import { Button } from '~/components/button'
 import { SectionDescription, SectionTitle } from '~/components/typography'
 
 export type FeatureId = 'simpleBooking' | 'speedySearching' | 'easySharing'
@@ -58,12 +59,13 @@ export function Feature({ featureId }: Props) {
         <SectionDescription className="mt-[0.85rem] px-2 lg:mt-[1.75rem] lg:px-0 lg:text-left">
           {feature.message}
         </SectionDescription>
-        <a
+        <Button
+          as="a"
           href="#"
-          className="mt-8 hidden rounded bg-primary-400 px-[1.6rem] py-[0.85rem] text-sm font-medium text-white shadow-lg lg:inline-block"
+          className="mt-8 hidden px-[1.375rem] lg:inline-block"
         >
           More Info
-        </a>
+        </Button>
       </div>
     </div>
   )

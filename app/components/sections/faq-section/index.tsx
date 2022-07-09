@@ -1,4 +1,5 @@
 import { ContentContainer } from '~/components/content-container'
+import { Button } from '~/components/button'
 import { SectionDescription, SectionTitle } from '~/components/typography'
 import { FaqList } from './faq-list'
 
@@ -12,12 +13,13 @@ export function FaqSection() {
           answered please feel free to email us.
         </SectionDescription>
         <FaqList />
-        <a
+        <Button
+          as="a"
           href="#"
-          className="mt-12 inline-block self-center rounded bg-primary-400 py-[0.9rem] px-6 text-sm font-medium text-white xl:mt-[2.875rem]"
+          className="mt-12 inline-block self-center px-[1.45rem] xl:mt-[2.875rem]"
         >
           More Info
-        </a>
+        </Button>
       </ContentContainer>
     </section>
   )

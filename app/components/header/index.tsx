@@ -33,7 +33,10 @@ export function Header() {
           }
         )}
       >
-        <a href="#">
+        <a
+          href="#"
+          className="rounded focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-neutral-800"
+        >
           <img src="/images/logo-bookmark.svg" alt="Home" />
         </a>
 

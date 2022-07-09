@@ -1,5 +1,6 @@
 import { SectionDescription } from '~/components/typography'
-import { ContentContainer } from './content-container'
+import { ContentContainer } from '~/components/content-container'
+import { Button } from '~/components/button'
 
 export function Hero() {
   return (
@@ -26,18 +27,12 @@ export function Hero() {
             free.
           </SectionDescription>
           <div className="mt-8 grid grid-cols-2 gap-3 lg:place-content-center xl:grid-cols-3">
-            <a
-              className="text-medium rounded bg-primary-400 py-[0.9rem] text-center text-sm tracking-wide text-white shadow-lg"
-              href=""
-            >
+            <Button as="a" href="#">
               Get it on Chrome
-            </a>
-            <a
-              className="text-medium  rounded bg-gray-100 py-[0.9rem] text-center text-sm tracking-wide text-neutral-800 shadow-lg"
-              href=""
-            >
+            </Button>
+            <Button as="a" href="#" appearance="neutral">
               Get it on Firefox
-            </a>
+            </Button>
           </div>
         </div>
       </ContentContainer>

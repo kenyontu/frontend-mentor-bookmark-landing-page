@@ -29,16 +29,16 @@ export function FeatureTabs({ selected, onChange }: Props) {
               checked={feature.id === selected}
               onClick={handleChange}
               onChange={handleChange}
-              className="absolute opacity-0"
+              className="peer absolute opacity-0"
             />
             <label
               htmlFor={inputId}
-              className="relative cursor-pointer py-[1rem] text-center tracking-wide text-neutral-800 sm:w-full sm:px-2 xl:py-[1.75rem]"
+              className="relative cursor-pointer py-[1rem] text-center tracking-wide text-neutral-800 transition-colors hover:text-secondary-400 peer-checked:font-medium peer-focus:text-secondary-400 sm:w-full sm:px-2 xl:py-[1.75rem]"
             >
               {feature.tabName}
               <span
                 className={clsx(
-                  'absolute left-1/2 bottom-0 h-1 w-0 -translate-x-1/2 bg-secondary-400 opacity-0  transition-[width]',
+                  'absolute left-1/2 bottom-0 h-1 w-0 -translate-x-1/2 bg-secondary-400 opacity-0 transition-[width]',
                   {
                     'w-[90%] opacity-100 sm:w-full': feature.id === selected,
                   }

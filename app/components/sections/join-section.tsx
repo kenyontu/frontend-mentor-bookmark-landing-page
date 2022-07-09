@@ -1,5 +1,6 @@
 import { Form } from '@remix-run/react'
 
+import { Button } from '~/components/button'
 import { ContentContainer } from '../content-container'
 import { SectionTitle } from '../typography'
 
@@ -13,17 +14,19 @@ export function JoinSection() {
         <SectionTitle className="mt-[0.55rem] leading-tight !text-white md:mx-auto md:mt-[2.1rem] md:w-[450px]">
           Stay up-to-date with what we're doing
         </SectionTitle>
-        <Form className="mt-[1.8rem] flex flex-col md:mx-auto md:mt-[2.325rem] md:w-[440px] md:flex-row md:gap-4">
+        <Form className="mt-[1.8rem] flex flex-col md:mx-auto md:mt-[2.25rem] md:w-[440px] md:flex-row md:gap-4">
           <input
             placeholder="Enter your email address"
-            className="rounded py-[0.9rem] px-4 text-sm tracking-wide md:flex-1"
+            className="rounded py-[0.9rem] px-4 text-sm tracking-wide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-neutral-800 md:flex-1"
           />
-          <button
+          <Button
+            as="button"
             type="submit"
-            className="mt-[1rem] rounded bg-secondary-400 py-[0.85rem] px-4 text-sm font-medium text-white md:col-span-3 md:mt-0 md:px-[1.55rem]"
+            appearance="secondary"
+            className="mt-[1rem] px-4 md:col-span-3 md:mt-0 md:px-[1.325rem]"
           >
             Contact Us
-          </button>
+          </Button>
         </Form>
       </ContentContainer>
     </section>

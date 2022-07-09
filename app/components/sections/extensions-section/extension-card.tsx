@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { Button } from '~/components/button'
 
 type Props = {
   iconImgSrc: string
@@ -27,12 +28,9 @@ export function ExtensionCard({
         </p>
       </div>
       <div className="bg-dot-pattern bg-top bg-repeat-x px-6 pt-7 pb-6">
-        <a
-          href={link}
-          className="block rounded bg-primary-400 py-[0.875rem] text-center text-sm font-medium text-white"
-        >
+        <Button as="a" href={link} className="block">
           Add & Install Extension
-        </a>
+        </Button>
       </div>
     </div>
   )
