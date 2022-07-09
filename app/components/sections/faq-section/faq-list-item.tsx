@@ -40,7 +40,7 @@ export function FaqListItem({ id, open, question, answer, onClick }: Props) {
           className={clsx('w-4 transition-transform', {
             'rotate-180': open,
           })}
-          aria-labelledby={`openIndicatorId`}
+          aria-labelledby={openIndicatorId}
           role="img"
         >
           <title id={openIndicatorId}>{open ? 'Open' : 'Closed'}</title>
