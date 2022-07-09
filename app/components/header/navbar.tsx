@@ -17,7 +17,10 @@ export function Navbar({ children, shrinkHeader }: Props) {
 
       <button
         onClick={() => setIsOpen((isOpen) => !isOpen)}
-        className={clsx('md:hidden', { 'opacity-0': isOpen })}
+        className={clsx(
+          'rounded-sm focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neutral-800 md:hidden',
+          { 'opacity-0': isOpen }
+        )}
       >
         <img src="/images/icon-hamburger.svg" alt="Open menu" />
       </button>
