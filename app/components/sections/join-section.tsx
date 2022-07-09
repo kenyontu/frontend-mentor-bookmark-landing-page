@@ -61,9 +61,7 @@ export function JoinSection() {
                   />
                   <p
                     id="email-error"
-                    className={clsx(
-                      'absolute top-[calc(100%-2px)] left-0 right-0 whitespace-nowrap rounded-b bg-secondary-400 px-4 py-1 text-sm text-white'
-                    )}
+                    className="absolute top-[calc(100%-2px)] left-0 right-0 whitespace-nowrap rounded-b bg-secondary-400 px-4 py-1 text-sm text-white"
                   >
                     {error}
                   </p>
