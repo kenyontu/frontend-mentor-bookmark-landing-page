@@ -19,7 +19,7 @@ export function Button<T extends As>({
 }: Props<T>) {
   return createElement(as, {
     className: clsx(
-      'rounded border-2 py-[0.775rem] text-center text-sm font-medium tracking-wide shadow-lg transition-colors hover:bg-white focus-visible:bg-white focus:outline-none',
+      'rounded border-2 py-[0.775rem] text-center text-sm font-medium tracking-wide shadow-lg transition-colors hover:bg-white focus-visible:bg-white focus:outline-none disabled:!bg-gray-300 disabled:!border-gray-300 disabled:!text-gray-400',
       {
         'border-primary-400 bg-primary-400 text-white hover:text-primary-400 focus-visible:text-primary-400':
           appearance === 'primary',

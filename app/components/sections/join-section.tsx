@@ -73,6 +73,7 @@ export function JoinSection() {
             as="button"
             type="submit"
             appearance="secondary"
+            disabled={Boolean(fetcher.submission)}
             className={clsx(
               'mt-[1rem] px-4 md:col-span-3 md:mt-0 md:px-[1.325rem]',
               { '!mt-10 md:mt-0': error }
