@@ -45,11 +45,11 @@ export function JoinSection() {
                 placeholder="Enter your email address"
                 onChange={() => setError(null)}
                 className={clsx(
-                  'peer w-full rounded py-[0.75rem] px-4 pr-10 text-sm tracking-wide outline-none',
+                  'peer w-full py-[0.75rem] px-4 pr-10 text-sm tracking-wide outline-none',
                   {
-                    'border-2 border-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-neutral-800':
+                    'rounded border-2 border-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-neutral-800':
                       !showError,
-                    'border-2 border-secondary-400': showError,
+                    'rounded-t border-2 border-secondary-400': showError,
                   }
                 )}
                 aria-label="Enter your email address"
