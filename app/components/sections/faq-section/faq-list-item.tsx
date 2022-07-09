@@ -28,7 +28,7 @@ export function FaqListItem({ open, question, answer, onClick }: Props) {
     <div className="relative border-b border-gray-200 xl:first:border-t">
       <button
         onClick={onClick}
-        className="flex w-full cursor-pointer items-center justify-between border-none bg-white py-[1.35rem] text-start text-sm tracking-wide text-neutral-800 transition-colors hover:text-secondary-400 focus:text-secondary-400 focus:outline-none lg:text-lg lg:tracking-normal xl:pt-[1.35rem] xl:pb-[1.1rem] xl:pr-6"
+        className="flex w-full cursor-pointer items-center justify-between border-none bg-white py-[1.35rem] text-start text-sm tracking-wide text-neutral-800 transition-colors hover:text-secondary-400 focus:outline-none focus-visible:text-secondary-400 lg:text-lg lg:tracking-normal xl:pt-[1.35rem] xl:pb-[1.1rem] xl:pr-6"
       >
         <span className="flex-1">{question}</span>
         <svg

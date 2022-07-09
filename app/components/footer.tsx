@@ -41,13 +41,13 @@ export function Footer() {
           <div className="mt-4 flex items-center gap-10 md:mt-0">
             <Link
               href="#"
-              className="fill-white hover:fill-secondary-400 focus:fill-secondary-400"
+              className="fill-white hover:fill-secondary-400 focus-visible:fill-secondary-400"
             >
               <FacebookIcon className="w-6" />
             </Link>
             <Link
               href="#"
-              className="fill-white hover:fill-secondary-400 focus:fill-secondary-400"
+              className="fill-white hover:fill-secondary-400 focus-visible:fill-secondary-400"
             >
               <TwitterIcon className="w-6" />
             </Link>

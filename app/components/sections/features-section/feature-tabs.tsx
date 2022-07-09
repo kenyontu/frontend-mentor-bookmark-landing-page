@@ -33,7 +33,7 @@ export function FeatureTabs({ selected, onChange }: Props) {
             />
             <label
               htmlFor={inputId}
-              className="relative cursor-pointer py-[1rem] text-center tracking-wide text-neutral-800 transition-colors hover:text-secondary-400 peer-checked:font-medium peer-focus:text-secondary-400 sm:w-full sm:px-2 xl:py-[1.75rem]"
+              className="relative cursor-pointer py-[1rem] text-center tracking-wide text-neutral-800 transition-colors hover:text-secondary-400 peer-checked:font-medium peer-focus-visible:text-secondary-400 sm:w-full sm:px-2 xl:py-[1.75rem]"
             >
               {feature.tabName}
               <span
