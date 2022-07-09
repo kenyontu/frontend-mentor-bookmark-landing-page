@@ -39,7 +39,8 @@ export function Header() {
           href="#"
           className="rounded focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-neutral-800"
         >
-          <img src="/images/logo-bookmark.svg" alt="Home" />
+          <img src="/images/logo-bookmark.svg" alt="" aria-hidden />
+          <span className="sr-only">Home</span>
         </a>
 
         <Navbar shrinkHeader={!isScrollOnPageTop}>
@@ -54,10 +55,20 @@ export function Header() {
 
           <div className="mt-3 flex items-center gap-8 self-center md:hidden">
             <a href="#">
-              <FacebookIcon className="w-5 fill-white" />
+              <FacebookIcon
+                idSuffix="header"
+                className="w-5 fill-white"
+                aria-hidden
+              />
+              <span className="sr-only">Facebook</span>
             </a>
             <a href="#">
-              <TwitterIcon className="w-5 fill-white" />
+              <TwitterIcon
+                idSuffix="header"
+                className="w-5 fill-white"
+                aria-hidden
+              />
+              <span className="sr-only">Twitter</span>
             </a>
           </div>
         </Navbar>

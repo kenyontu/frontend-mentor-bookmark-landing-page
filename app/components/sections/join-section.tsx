@@ -52,6 +52,7 @@ export function JoinSection() {
                     'border-2 border-secondary-400': showError,
                   }
                 )}
+                aria-label="Enter your email address"
                 aria-describedby="email-error"
               />
               {showError && (

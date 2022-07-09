@@ -26,7 +26,8 @@ export function Footer() {
           href="#"
           className="rounded focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
         >
-          <img src="/images/logo-bookmark-white.svg" alt="Home" />
+          <img src="/images/logo-bookmark-white.svg" alt="" aria-hidden />
+          <span className="sr-only">Home</span>
         </a>
         <nav
           aria-label="Footer navigation"
@@ -43,13 +44,15 @@ export function Footer() {
               href="#"
               className="fill-white hover:fill-secondary-400 focus-visible:fill-secondary-400"
             >
-              <FacebookIcon className="w-6" />
+              <FacebookIcon idSuffix="footer" className="w-6" aria-hidden />
+              <span className="sr-only">Facebook</span>
             </Link>
             <Link
               href="#"
               className="fill-white hover:fill-secondary-400 focus-visible:fill-secondary-400"
             >
-              <TwitterIcon className="w-6" />
+              <TwitterIcon idSuffix="footer" className="w-6" aria-hidden />
+              <span className="sr-only">Twitter</span>
             </Link>
           </div>
         </nav>
