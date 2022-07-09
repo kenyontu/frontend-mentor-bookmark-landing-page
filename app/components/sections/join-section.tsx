@@ -20,6 +20,8 @@ export function JoinSection() {
     }
   }, [fetcher.data])
 
+  const showError = error && !fetcher.submission
+
   return (
     <section className="mt-[7.65rem] bg-primary-400 xl:mt-[9.35rem]">
       <ContentContainer className="px-8 pt-[4.45rem] pb-[3.8rem] sm:px-24 md:px-24 md:pt-[4.25rem] md:pb-[4.5rem]">
@@ -46,13 +48,13 @@ export function JoinSection() {
                   'peer w-full rounded py-[0.75rem] px-4 pr-10 text-sm tracking-wide outline-none',
                   {
                     'border-2 border-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-neutral-800':
-                      !error,
-                    'border-2 border-secondary-400': error,
+                      !showError,
+                    'border-2 border-secondary-400': showError,
                   }
                 )}
                 aria-describedby="email-error"
               />
-              {error && (
+              {showError && (
                 <>
                   <img
                     src="/images/icon-error.svg"
@@ -61,7 +63,7 @@ export function JoinSection() {
                   />
                   <p
                     id="email-error"
-                    className="absolute top-[calc(100%-2px)] left-0 right-0 whitespace-nowrap rounded-b bg-secondary-400 px-4 py-1 text-sm text-white"
+                    className="absolute top-[calc(100%-2px)] left-0 right-0 whitespace-nowrap rounded-b bg-secondary-400 px-4 py-1 text-xs italic text-white"
                   >
                     {error}
                   </p>
@@ -76,7 +78,7 @@ export function JoinSection() {
             disabled={Boolean(fetcher.submission)}
             className={clsx(
               'mt-[1rem] px-4 md:col-span-3 md:mt-0 md:px-[1.325rem]',
-              { '!mt-10 md:mt-0': error }
+              { '!mt-10 md:!mt-0': error }
             )}
           >
             Contact Us
