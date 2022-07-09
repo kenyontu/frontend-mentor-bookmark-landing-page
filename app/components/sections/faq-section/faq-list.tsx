@@ -36,6 +36,7 @@ export function FaqList() {
       {faqs.map((faq) => (
         <FaqListItem
           key={faq.id}
+          id={faq.id}
           open={faq.id === openQuestion}
           question={faq.question}
           answer={faq.answer}

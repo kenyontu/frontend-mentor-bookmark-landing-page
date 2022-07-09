@@ -53,7 +53,7 @@ export function JoinSection() {
                   }
                 )}
                 aria-label="Enter your email address"
-                aria-describedby="email-error"
+                aria-describedby={error ? 'email-error' : undefined}
               />
               {showError && (
                 <>

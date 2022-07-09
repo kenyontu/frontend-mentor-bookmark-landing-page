@@ -2,13 +2,14 @@ import clsx from 'clsx'
 import { useEffect, useRef, useState } from 'react'
 
 type Props = {
+  id: string
   open: boolean
   question: string
   answer: string
   onClick: () => void
 }
 
-export function FaqListItem({ open, question, answer, onClick }: Props) {
+export function FaqListItem({ id, open, question, answer, onClick }: Props) {
   const [maxHeight, setMaxHeight] = useState(-1)
   const answerContainer = useRef<HTMLDivElement>(null)
 
@@ -24,6 +25,8 @@ export function FaqListItem({ open, question, answer, onClick }: Props) {
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
+  const openIndicatorId = `open-indicator-${id}`
+
   return (
     <div className="relative border-b border-gray-200 xl:first:border-t">
       <button
@@ -37,10 +40,10 @@ export function FaqListItem({ open, question, answer, onClick }: Props) {
           className={clsx('w-4 transition-transform', {
             'rotate-180': open,
           })}
-          aria-labelledby={question}
+          aria-labelledby={`openIndicatorId`}
           role="img"
         >
-          <title id={question}>{open ? 'Open' : 'Closed'}</title>
+          <title id={openIndicatorId}>{open ? 'Open' : 'Closed'}</title>
           <path
             fill="none"
             strokeWidth="3"
